@@ -11,24 +11,28 @@ export default function Home() {
       datePublished: "Jan 10 2020",
       subTitle: "Subtitle",
       featured: true,
+      url: "/posts/post1",
     },
     {
       title: "Post title 2",
       readTimeMinutes: 10,
       datePublished: "Jan 10 2020",
       subTitle: "Subtitle",
+      url: "/posts/post1",
     },
     {
       title: "Post title 3",
       readTimeMinutes: 10,
       datePublished: "Jan 5 2020",
       subTitle: "Subtitle",
+      url: "/posts/post1",
     },
     {
       title: "Post title 4",
       readTimeMinutes: 10,
       datePublished: "Jan 2 2020",
       subTitle: "Subtitle",
+      url: "/posts/post1",
     },
   ];
 
@@ -53,7 +57,12 @@ export default function Home() {
         })}
       </main>
 
-      <footer></footer>
+      <footer>
+        <div className="footer-text">
+          Email me at{" "}
+          <a href="mailto:jakecduncan@gmail.com">jakecduncan@gmail.com</a>
+        </div>
+      </footer>
 
       <style jsx>{`
         .container {
@@ -63,7 +72,6 @@ export default function Home() {
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          background: #282c35;
         }
 
         main {
@@ -93,8 +101,17 @@ export default function Home() {
           height: 50px;
           border-top: 1px solid #eaeaea;
           display: flex;
-          justify-content: center;
+          justify-content: flex-start;
           align-items: center;
+        }
+
+        .footer-text {
+          color: hsla(0, 0%, 100%, 0.88);
+          margin: 0 10px;
+        }
+
+        a {
+          color: gold;
         }
 
         code {
@@ -137,6 +154,7 @@ export default function Home() {
           font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
             Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
             sans-serif;
+          background: #282c35;
         }
 
         * {

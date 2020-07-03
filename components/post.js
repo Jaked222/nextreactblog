@@ -1,5 +1,5 @@
 import StarRateIcon from "@material-ui/icons/StarRate";
-import { Button } from "@material-ui/core";
+import Link from "next/link";
 
 export default function Post({ className, details }) {
   return (
@@ -18,18 +18,20 @@ export default function Post({ className, details }) {
         Preview text. lorem ipsum etc etc etc lalala some text here that's going
         to be some...
       </div>
-      <Button
-        style={{
-          color: "gold",
-          padding: "0",
-          display: "flex",
-          justifyContent: "left",
-          margin: "10px 0 0 0",
-          width: "30%",
-        }}
-      >
-        Read more...
-      </Button>
+      <Link href={details.url}>
+        <a
+          style={{
+            color: "gold",
+            padding: "0",
+            display: "flex",
+            justifyContent: "left",
+            margin: "10px 0 0 0",
+            width: "30%",
+          }}
+        >
+          Read more...
+        </a>
+      </Link>
       <style jsx>
         {`
           .post {
