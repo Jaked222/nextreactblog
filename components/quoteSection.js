@@ -1,21 +1,14 @@
-export default function Bio({ className }) {
+export default function QuoteSection({ className }) {
   return (
     <div className={className}>
-      <img src="https://picsum.photos/56/56"></img>
-      <div className="text">
-        A place for writing about things that I find interesting
-      </div>
+      <h2>A quote that I like</h2>
+      <div>quote text something wise something very very wise....</div>
       <style jsx>
         {`
           .post {
             width: 50%;
             display: flex;
-          }
-          .text {
-            margin-left: 10px;
-            text-align: center;
-            display: flex;
-            align-items: center;
+            flex-direction: column;
           }
 
           h2 {
@@ -29,7 +22,7 @@ export default function Bio({ className }) {
           }
 
           div {
-            margin: 10px 0 0 0;
+            margin: 10px 0;
             color: hsla(0, 0%, 100%, 0.88);
           }
         `}

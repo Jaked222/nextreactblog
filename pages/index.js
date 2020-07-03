@@ -1,7 +1,37 @@
 import Head from "next/head";
 import Bio from "../components/bio";
 import Post from "../components/post";
+import QuoteSection from "../components/quoteSection";
+
 export default function Home() {
+  let posts = [
+    {
+      title: "Post title 1",
+      readTimeMinutes: 10,
+      datePublished: "Jan 10 2020",
+      subTitle: "Subtitle",
+      featured: true,
+    },
+    {
+      title: "Post title 2",
+      readTimeMinutes: 10,
+      datePublished: "Jan 10 2020",
+      subTitle: "Subtitle",
+    },
+    {
+      title: "Post title 3",
+      readTimeMinutes: 10,
+      datePublished: "Jan 5 2020",
+      subTitle: "Subtitle",
+    },
+    {
+      title: "Post title 4",
+      readTimeMinutes: 10,
+      datePublished: "Jan 2 2020",
+      subTitle: "Subtitle",
+    },
+  ];
+
   return (
     <div className="container">
       <Head>
@@ -11,7 +41,16 @@ export default function Home() {
       <main>
         <h1>jakeduncan.dev</h1>
         <Bio className="post" />
-        <Post className="post" />
+        <QuoteSection className="post" />
+        {posts.map((postDetail) => {
+          return (
+            <Post
+              key={postDetail.title}
+              className="post"
+              details={postDetail}
+            />
+          );
+        })}
       </main>
 
       <footer></footer>
@@ -24,18 +63,11 @@ export default function Home() {
           flex-direction: column;
           justify-content: center;
           align-items: center;
+          background: #282c35;
         }
 
         main {
-          width: 80%;
-          height: 80%;
-          display: flex;
-          justify-content: flex-start;
-          align-items: flex-start;
-        }
-
-        main {
-          padding: 5rem 0;
+          padding: 2rem 0;
           flex: 1;
           display: flex;
           flex-direction: column;
@@ -44,6 +76,16 @@ export default function Home() {
           display: flex;
           justify-content: flex-start;
           align-items: flex-start;
+        }
+
+        h1 {
+          margin: 10px 0 0 0;
+          color: white;
+        }
+
+        h6 {
+          margin: 10px 0 0 0;
+          color: hsla(0, 0%, 100%, 0.88);
         }
 
         footer {
