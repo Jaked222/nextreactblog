@@ -2,40 +2,9 @@ import Head from "next/head";
 import Bio from "../components/bio";
 import Post from "../components/post";
 import QuoteSection from "../components/quoteSection";
+import posts from "../post-config";
 
 export default function Home() {
-  let posts = [
-    {
-      title: "Post title 1",
-      readTimeMinutes: 10,
-      datePublished: "Jan 10 2020",
-      subTitle: "Subtitle",
-      featured: true,
-      url: "/posts/post1",
-    },
-    {
-      title: "Post title 2",
-      readTimeMinutes: 10,
-      datePublished: "Jan 10 2020",
-      subTitle: "Subtitle",
-      url: "/posts/post1",
-    },
-    {
-      title: "Post title 3",
-      readTimeMinutes: 10,
-      datePublished: "Jan 5 2020",
-      subTitle: "Subtitle",
-      url: "/posts/post1",
-    },
-    {
-      title: "Post title 4",
-      readTimeMinutes: 10,
-      datePublished: "Jan 2 2020",
-      subTitle: "Subtitle",
-      url: "/posts/post1",
-    },
-  ];
-
   return (
     <div className="container">
       <Head>
@@ -65,15 +34,6 @@ export default function Home() {
       </footer>
 
       <style jsx>{`
-        .container {
-          min-height: 100vh;
-          padding: 0 0.5rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
         main {
           padding: 2rem 0;
           flex: 1;
@@ -86,18 +46,8 @@ export default function Home() {
           align-items: flex-start;
         }
 
-        h1 {
-          margin: 10px 0 0 0;
-          color: white;
-        }
-
-        h6 {
-          margin: 10px 0 0 0;
-          color: hsla(0, 0%, 100%, 0.88);
-        }
-
         footer {
-          width: 100%;
+          width: 80%;
           height: 50px;
           border-top: 1px solid #eaeaea;
           display: flex;
@@ -108,6 +58,27 @@ export default function Home() {
         .footer-text {
           color: hsla(0, 0%, 100%, 0.88);
           margin: 0 10px;
+        }
+      `}</style>
+
+      <style jsx global>{`
+        .container {
+          min-height: 100vh;
+          padding: 0 0.5rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+
+        h1 {
+          margin: 10px 0 0 0;
+          color: white;
+        }
+
+        h6 {
+          margin: 10px 0 0 0;
+          color: hsla(0, 0%, 100%, 0.88);
         }
 
         a {
@@ -123,30 +94,6 @@ export default function Home() {
             DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
         }
 
-        .grid {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-wrap: wrap;
-
-          max-width: 800px;
-          margin-top: 3rem;
-        }
-
-        .card {
-          margin: 1rem;
-          flex-basis: 45%;
-          padding: 1.5rem;
-          text-align: left;
-          color: inherit;
-          text-decoration: none;
-          border: 1px solid #eaeaea;
-          border-radius: 10px;
-          transition: color 0.15s ease, border-color 0.15s ease;
-        }
-      `}</style>
-
-      <style jsx global>{`
         html,
         body {
           padding: 0;

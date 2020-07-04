@@ -9,6 +9,7 @@ export default function Bio({ className }) {
         {`
           .post {
             width: 50%;
+            margin: 20px 0 0 0;
             display: flex;
           }
           .text {

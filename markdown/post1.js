@@ -1,3 +1,3 @@
 export default function Post1() {
-  return <div>hey</div>;
+  return <div>post1 yoooo!</div>;
 }
