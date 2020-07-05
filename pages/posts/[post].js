@@ -39,10 +39,6 @@ export default function PostWrapper() {
         </div>
       </footer>
       <style jsx>{`
-        .post-body {
-          margin: 0px 0 0 20px;
-        }
-
         .post-body div {
           color: var(--secondary-text);
           margin-top: -20px;

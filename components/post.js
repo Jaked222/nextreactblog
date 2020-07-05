@@ -61,6 +61,12 @@ export default function Post({ className, details }) {
             flex-direction: column;
             margin: 10px 0;
           }
+
+          @media only screen and (max-width: 768px) {
+            .post {
+              width: 100%;
+            }
+          }
         `}
       </style>
     </div>

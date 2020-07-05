@@ -94,3 +94,13 @@ body {
 .quote-text {
   color: var(--secondary-text);
 }
+
+@media only screen and (max-width: 768px) {
+  main {
+    width: 100%;
+  }
+
+  .post {
+    width: 100%;
+  }
+}
