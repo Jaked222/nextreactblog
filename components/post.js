@@ -11,7 +11,7 @@ export default function Post({ className, details }) {
         {details.title}
       </h2>
       <div className="italic">
-        {details.subTitle} - {details.readTimeMinutes}m read time
+        {details.datePublished} &middot; {details.readTimeMinutes}m read time
       </div>
       <p>
         Preview text. lorem ipsum etc etc etc lalala some text here that's going
