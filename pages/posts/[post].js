@@ -24,7 +24,11 @@ export default function PostWrapper() {
       </Head>
       <main>
         <h1 onClick={handleGoHomeClick}>jakeduncan.dev</h1>
-        <div className="post-body">{MarkDown && <MarkDown />}</div>
+        <div className="post-body">
+          <h2>Post Title</h2>
+          <div>post subtitle - length</div>
+          {MarkDown && <MarkDown />}
+        </div>
       </main>
 
       <footer>
@@ -34,8 +38,14 @@ export default function PostWrapper() {
         </div>
       </footer>
       <style jsx>{`
-        .postBody {
-          margin: 20px 0 0 0;
+        .post-body {
+          margin: 40px 0 0 20px;
+        }
+
+        .post-body div {
+          color: var(--secondary-text);
+          margin-top: -20px;
+          font-style: italic;
         }
       `}</style>
     </div>

@@ -10,14 +10,13 @@ export default function Post({ className, details }) {
           <StarRateIcon style={{ float: "right", color: "gold" }} />
         )}
       </h2>
-
-      <h5>
+      <div className="italic">
         {details.subTitle} - {details.readTimeMinutes}m read time
-      </h5>
-      <div>
+      </div>
+      <p>
         Preview text. lorem ipsum etc etc etc lalala some text here that's going
         to be some...
-      </div>
+      </p>
       <Link href={details.url}>
         <a
           style={{
@@ -34,13 +33,6 @@ export default function Post({ className, details }) {
       </Link>
       <style jsx>
         {`
-          .post {
-            width: 50%;
-            display: flex;
-            flex-direction: column;
-            margin: 10px 0;
-          }
-
           button {
             color: gold;
             padding: 0;
@@ -54,14 +46,20 @@ export default function Post({ className, details }) {
             color: white;
           }
 
-          h5 {
+          div {
             margin: 10px 0 0 0;
             color: hsla(0, 0%, 100%, 0.88);
           }
 
-          div {
-            margin: 10px 0 0 0;
-            color: hsla(0, 0%, 100%, 0.88);
+          .italic {
+            font-style: italic;
+          }
+
+          .post {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            margin: 10px 0;
           }
         `}
       </style>
