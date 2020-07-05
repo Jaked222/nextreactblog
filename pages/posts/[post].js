@@ -40,7 +40,7 @@ export default function PostWrapper() {
       </footer>
       <style jsx>{`
         .post-body {
-          margin: 40px 0 0 20px;
+          margin: 0px 0 0 20px;
         }
 
         .post-body div {

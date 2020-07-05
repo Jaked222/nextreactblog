@@ -38,7 +38,8 @@ main {
 footer {
   width: 80%;
   height: 50px;
-  border-top: 1px solid #eaeaea;
+  color: var(--secondary-text);
+  margin: 0 10px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -79,15 +80,17 @@ body {
   align-items: center;
 }
 
+.footer-link {
+  margin: 0 20px;
+}
+.footer-link.first {
+  margin: 0 20px 0 0;
+}
+
 .page-title {
   margin-bottom: 40px;
 }
 
 .quote-text {
   color: var(--secondary-text);
-}
-
-.footer-text {
-  color: var(--secondary-text);
-  margin: 0 10px;
 }

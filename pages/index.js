@@ -23,6 +23,7 @@ export default function Home() {
           <div className="quote-text">
             quote text something wise something very very wise....
           </div>
+          <a href="mailto:jakecduncan@gmail.com">jakecduncan@gmail.com</a>
         </div>
         {posts.map((postDetail) => {
           return (
@@ -36,10 +37,17 @@ export default function Home() {
       </main>
 
       <footer>
-        <div className="footer-text">
-          Email me at{" "}
-          <a href="mailto:jakecduncan@gmail.com">jakecduncan@gmail.com</a>
-        </div>
+        <a className="footer-link first" href="mailto:jakecduncan@gmail.com">
+          Email
+        </a>
+        &middot;
+        <a className="footer-link" href="www.linkedin.com/in/jakeduncan222">
+          Linkedin
+        </a>
+        &middot;
+        <a className="footer-link" href="https://github.com/Jaked222">
+          Github
+        </a>
       </footer>
     </div>
   );
