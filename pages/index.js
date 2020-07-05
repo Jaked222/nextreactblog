@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Bio from "../components/bio";
 import Post from "../components/post";
-import QuoteSection from "../components/quoteSection";
 import posts from "../post-config";
 import { useRouter } from "next/router";
 
@@ -19,9 +18,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h1 onClick={handleGoHomeClick}>jakeduncan.dev</h1>
-        <Bio className="post" />
-        <QuoteSection className="post" />
+        <div className="page-title">
+          <h1 onClick={handleGoHomeClick}>jake duncan &middot; developer</h1>
+          <div className="quote-text">
+            quote text something wise something very very wise....
+          </div>
+        </div>
         {posts.map((postDetail) => {
           return (
             <Post

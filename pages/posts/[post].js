@@ -23,7 +23,9 @@ export default function PostWrapper() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h1 onClick={handleGoHomeClick}>jakeduncan.dev</h1>
+        <h1 className="page-title" onClick={handleGoHomeClick}>
+          jake duncan &middot; developer
+        </h1>
         <div className="post-body">
           <h2>Post Title</h2>
           <div>post subtitle - length</div>
@@ -33,7 +35,6 @@ export default function PostWrapper() {
 
       <footer>
         <div className="footer-text">
-          Email me at{" "}
           <a href="mailto:jakecduncan@gmail.com">jakecduncan@gmail.com</a>
         </div>
       </footer>

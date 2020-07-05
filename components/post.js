@@ -5,10 +5,10 @@ export default function Post({ className, details }) {
   return (
     <div className={className}>
       <h2>
-        {details.title}
         {details.featured && (
-          <StarRateIcon style={{ float: "right", color: "gold" }} />
+          <StarRateIcon style={{ color: "var(--call-to-action)" }} />
         )}
+        {details.title}
       </h2>
       <div className="italic">
         {details.subTitle} - {details.readTimeMinutes}m read time
@@ -20,7 +20,7 @@ export default function Post({ className, details }) {
       <Link href={details.url}>
         <a
           style={{
-            color: "gold",
+            color: "var(--call-to-action)",
             padding: "0",
             display: "flex",
             justifyContent: "left",
@@ -34,7 +34,7 @@ export default function Post({ className, details }) {
       <style jsx>
         {`
           button {
-            color: gold;
+            color: var(--call-to-action);
             padding: 0;
             display: flex;
             justify-content: left;

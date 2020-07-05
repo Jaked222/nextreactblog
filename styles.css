@@ -1,7 +1,7 @@
 :root {
   --primary-text: white;
   --secondary-text: hsla(0, 0%, 100%, 0.88);
-  --call-to-action: gold;
+  --call-to-action: goldenrod;
 }
 
 h1 {
@@ -77,6 +77,14 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.page-title {
+  margin-bottom: 40px;
+}
+
+.quote-text {
+  color: var(--secondary-text);
 }
 
 .footer-text {
