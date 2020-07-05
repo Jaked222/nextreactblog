@@ -2,11 +2,10 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
-import posts from "../../post-config";
 
 export default function PostWrapper() {
   const router = useRouter();
-  const [DynamicComponent, setDynamicComponent] = useState(null);
+  const [MarkDown, setMarkDown] = useState(null);
 
   let handleGoHomeClick = () => {
     router.push("/");
@@ -14,7 +13,7 @@ export default function PostWrapper() {
 
   const { post } = router.query;
   useEffect(() => {
-    setDynamicComponent(dynamic(() => import(`../../markdown/${post}`)));
+    setMarkDown(dynamic(() => import(`../../markdown/${post}.mdx`)));
   }, [post]);
 
   return (
@@ -25,9 +24,7 @@ export default function PostWrapper() {
       </Head>
       <main>
         <h1 onClick={handleGoHomeClick}>jakeduncan.dev</h1>
-        {DynamicComponent && (
-          <DynamicComponent className="postBody" post={post} />
-        )}
+        <div className="post-body">{MarkDown && <MarkDown />}</div>
       </main>
 
       <footer>
@@ -36,6 +33,11 @@ export default function PostWrapper() {
           <a href="mailto:jakecduncan@gmail.com">jakecduncan@gmail.com</a>
         </div>
       </footer>
+      <style jsx>{`
+        .postBody {
+          margin: 20px 0 0 0;
+        }
+      `}</style>
     </div>
   );
 }
