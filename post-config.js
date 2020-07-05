@@ -4,7 +4,6 @@ let posts = [
     readTimeMinutes: 10,
     datePublished: "Jan 10 2020",
     subTitle: "Subtitle",
-    featured: true,
     url: "/posts/post1",
   },
   {

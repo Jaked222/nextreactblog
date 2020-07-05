@@ -56,10 +56,10 @@ export default function Post({ className, details }) {
           }
 
           .post {
-            width: 50%;
+            width: 80%;
             display: flex;
             flex-direction: column;
-            margin: 10px 0;
+            margin: 30px 0;
           }
 
           @media only screen and (max-width: 768px) {
