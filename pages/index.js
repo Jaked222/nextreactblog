@@ -3,6 +3,8 @@ import Bio from "../components/bio";
 import Post from "../components/post";
 import posts from "../post-config";
 import { useRouter } from "next/router";
+import QuoteSection from "../components/quoteSection";
+import { displayQuoteSection } from "../site-config";
 
 export default function Home() {
   const router = useRouter();
@@ -20,9 +22,7 @@ export default function Home() {
       <main>
         <div className="page-title">
           <h1 onClick={handleGoHomeClick}>jake duncan &middot; developer</h1>
-          <div className="quote-text">
-            quote text something wise something very very wise....
-          </div>
+          {displayQuoteSection && <QuoteSection className="quote-text" />}
           <a href="mailto:jakecduncan@gmail.com">jakecduncan@gmail.com</a>
         </div>
         {posts.map((postDetail) => {

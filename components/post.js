@@ -1,7 +1,9 @@
 import StarRateIcon from "@material-ui/icons/StarRate";
 import Link from "next/link";
+import { cardEnabled } from "../site-config";
 
 export default function Post({ className, details }) {
+  className = cardEnabled ? className + " withCard" : className;
   return (
     <div className={className}>
       <h2>
@@ -24,7 +26,6 @@ export default function Post({ className, details }) {
             padding: "0",
             display: "flex",
             justifyContent: "left",
-            margin: "10px 0 0 0",
             width: "30%",
           }}
         >
@@ -47,7 +48,6 @@ export default function Post({ className, details }) {
           }
 
           div {
-            margin: 10px 0 0 0;
             color: hsla(0, 0%, 100%, 0.88);
           }
 
@@ -60,6 +60,12 @@ export default function Post({ className, details }) {
             display: flex;
             flex-direction: column;
             margin: 30px 0;
+          }
+
+          .post.withCard {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 5px;
+            padding: 10px;
           }
 
           @media only screen and (max-width: 768px) {
