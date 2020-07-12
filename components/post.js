@@ -48,7 +48,7 @@ export default function Post({ className, details }) {
           }
 
           div {
-            color: hsla(0, 0%, 100%, 0.88);
+            color: white;
           }
 
           .italic {

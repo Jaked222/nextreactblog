@@ -1,6 +1,6 @@
 :root {
   --primary-text: white;
-  --secondary-text: hsla(0, 0%, 100%, 0.88);
+  --secondary-text: hsla(0, 0%, 100%, 0.6);
   --call-to-action: goldenrod;
 }
 
