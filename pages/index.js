@@ -6,15 +6,20 @@ import { useRouter } from "next/router";
 import QuoteSection from "../components/quoteSection";
 import { displayQuoteSection } from "../site-config";
 import FileCopyIcon from "@material-ui/icons/FileCopy";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import DarkModeToggle from "react-dark-mode-toggle";
 
 export default function Home() {
   const [showCopied, setShowCopied] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(true);
+  const [showFileCopyIcon, setShowFileCopyIcon] = useState(false);
   const router = useRouter();
   const textAreaRef = useRef(null);
+
+  useEffect(() => {
+    setShowFileCopyIcon(true);
+  }, []);
 
   let handleGoHomeClick = () => {
     router.push("/");
@@ -104,15 +109,17 @@ export default function Home() {
             <a href="mailto:jakecduncan@gmail.com">
               <span ref={textAreaRef}>jakecduncan@gmail.com</span>
             </a>
-            <FileCopyIcon
-              onClick={handleCopyClick}
-              style={{
-                color: "var(--secondary-text)",
-                fontSize: "1rem",
-                marginLeft: "10px",
-                cursor: "pointer",
-              }}
-            />
+            {showFileCopyIcon && (
+              <FileCopyIcon
+                onClick={handleCopyClick}
+                style={{
+                  color: "var(--secondary-text)",
+                  fontSize: "1rem",
+                  marginLeft: "10px",
+                  cursor: "pointer",
+                }}
+              />
+            )}
             {showCopied && (
               <motion.span
                 style={{
