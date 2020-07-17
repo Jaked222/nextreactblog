@@ -1,6 +1,7 @@
 import StarRateIcon from "@material-ui/icons/StarRate";
 import Link from "next/link";
 import { cardEnabled } from "../site-config";
+import ArrowRightAltIcon from "@material-ui/icons/ArrowRightAlt";
 
 export default function Post({ className, details }) {
   className = cardEnabled ? className + " withCard" : className;
@@ -29,7 +30,7 @@ export default function Post({ className, details }) {
             width: "30%",
           }}
         >
-          Read more...
+          Read more <ArrowRightAltIcon style={{ marginLeft: "8px" }} />
         </a>
       </Link>
       <style jsx>
