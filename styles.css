@@ -39,7 +39,6 @@ main {
 }
 
 footer {
-  width: 80%;
   height: 50px;
   color: var(--secondary-text);
   margin: 0 10px;
