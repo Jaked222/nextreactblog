@@ -27,7 +27,6 @@ export default function Post({ className, details }) {
             padding: "0",
             display: "flex",
             justifyContent: "left",
-            width: "30%",
           }}
         >
           Read more <ArrowRightAltIcon style={{ marginLeft: "8px" }} />
@@ -71,7 +70,8 @@ export default function Post({ className, details }) {
 
           @media only screen and (max-width: 768px) {
             .post {
-              width: 100%;
+              width: 90%;
+              margin-left: 5%;
             }
           }
         `}

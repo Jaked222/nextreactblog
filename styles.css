@@ -51,6 +51,7 @@ footer {
 a {
   color: var(--call-to-action);
   text-decoration: none;
+  width: 100%;
 }
 
 code {
@@ -111,7 +112,7 @@ body {
     margin-left: 0;
   }
 
-  .post {
+  .page-title {
     width: 100%;
   }
 }
