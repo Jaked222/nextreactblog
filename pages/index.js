@@ -8,9 +8,11 @@ import { displayQuoteSection } from "../site-config";
 import FileCopyIcon from "@material-ui/icons/FileCopy";
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
+import DarkModeToggle from "react-dark-mode-toggle";
 
 export default function Home() {
   const [showCopied, setShowCopied] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
   const router = useRouter();
   const textAreaRef = useRef(null);
 
@@ -41,6 +43,41 @@ export default function Home() {
     setShowCopied(true);
   };
 
+  let handleDarkModeToggle = (e) => {
+    if (!isDarkMode) {
+      document.documentElement.style.setProperty("--primary-text", "white");
+      document.documentElement.style.setProperty(
+        "--secondary-text",
+        "hsla(0, 0%, 100%, 0.6)"
+      );
+      document.documentElement.style.setProperty(
+        "--call-to-action",
+        "goldenrod"
+      );
+      document.documentElement.style.setProperty(
+        "--container-background",
+        "#141317"
+      );
+      document.documentElement.style.setProperty(
+        "--post-background",
+        "#23212a"
+      );
+    } else {
+      document.documentElement.style.setProperty("--primary-text", "#000000");
+      document.documentElement.style.setProperty("--secondary-text", "#6D6A6F");
+      document.documentElement.style.setProperty("--call-to-action", "#7C20D8");
+      document.documentElement.style.setProperty(
+        "--container-background",
+        "white"
+      );
+      document.documentElement.style.setProperty(
+        "--post-background",
+        "#F5F5F5"
+      );
+    }
+    setIsDarkMode(e);
+  };
+
   return (
     <div className="container">
       <Head>
@@ -49,39 +86,53 @@ export default function Home() {
       </Head>
       <main>
         <div className="page-title">
-          <h1 onClick={handleGoHomeClick}>jake duncan &middot; developer</h1>
-          {displayQuoteSection && <QuoteSection className="quote-text" />}
-          <a href="mailto:jakecduncan@gmail.com">
-            <span ref={textAreaRef}>jakecduncan@gmail.com</span>
-          </a>
-          <FileCopyIcon
-            onClick={handleCopyClick}
+          <h1 onClick={handleGoHomeClick}>Jake Duncan &middot; Developer</h1>
+          <div
             style={{
-              color: "var(--secondary-text)",
-              fontSize: "1rem",
-              marginLeft: "10px",
-              cursor: "pointer",
+              display: "flex",
+              width: "100%",
+              justifyContent: "space-between",
             }}
-          />
-          {showCopied && (
-            <motion.span
+          >
+            {displayQuoteSection && <QuoteSection className="quote-text" />}
+            <DarkModeToggle
+              onChange={handleDarkModeToggle}
+              checked={isDarkMode}
+            />
+          </div>
+          <div>
+            <a href="mailto:jakecduncan@gmail.com">
+              <span ref={textAreaRef}>jakecduncan@gmail.com</span>
+            </a>
+            <FileCopyIcon
+              onClick={handleCopyClick}
               style={{
-                color: "var(--secondary-text",
-                fontStyle: "italic",
-                margin: "0 0 0 10px",
+                color: "var(--secondary-text)",
+                fontSize: "1rem",
+                marginLeft: "10px",
+                cursor: "pointer",
               }}
-              initial="visible"
-              animate="hidden"
-              onAnimationComplete={() => setShowCopied(false)}
-              transition={{ duration: 1.5 }}
-              variants={{
-                hidden: { opacity: 0 },
-                visible: { opacity: 1 },
-              }}
-            >
-              Copied to clipboard
-            </motion.span>
-          )}
+            />
+            {showCopied && (
+              <motion.span
+                style={{
+                  color: "var(--secondary-text",
+                  fontStyle: "italic",
+                  margin: "0 0 0 10px",
+                }}
+                initial="visible"
+                animate="hidden"
+                onAnimationComplete={() => setShowCopied(false)}
+                transition={{ duration: 1.5 }}
+                variants={{
+                  hidden: { opacity: 0 },
+                  visible: { opacity: 1 },
+                }}
+              >
+                Copied to clipboard
+              </motion.span>
+            )}
+          </div>
         </div>
         {posts.map((postDetail) => {
           return (

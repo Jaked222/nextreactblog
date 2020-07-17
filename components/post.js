@@ -44,11 +44,11 @@ export default function Post({ className, details }) {
 
           h2 {
             margin: 10px 0 0 0;
-            color: white;
+            color: var(--primary-text);
           }
 
           div {
-            color: white;
+            color: var(--primary-text);
           }
 
           .italic {
@@ -63,7 +63,7 @@ export default function Post({ className, details }) {
           }
 
           .post.withCard {
-            background: #23212a;
+            background: var(--post-background);
             border-radius: 5px;
             padding: 20px 40px;
           }
