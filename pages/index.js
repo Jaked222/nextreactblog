@@ -7,6 +7,7 @@ import QuoteSection from "../components/quoteSection";
 import { displayQuoteSection } from "../site-config";
 import FileCopyIcon from "@material-ui/icons/FileCopy";
 import { useRef, useState } from "react";
+import { motion } from "framer-motion";
 
 export default function Home() {
   const [showCopied, setShowCopied] = useState(false);
@@ -38,9 +39,6 @@ export default function Home() {
     }
 
     setShowCopied(true);
-    setTimeout(() => {
-      setShowCopied(false);
-    }, 1000);
   };
 
   return (
@@ -66,15 +64,23 @@ export default function Home() {
             }}
           />
           {showCopied && (
-            <span
+            <motion.span
               style={{
                 color: "var(--secondary-text",
                 fontStyle: "italic",
                 margin: "0 0 0 10px",
               }}
+              initial="visible"
+              animate="hidden"
+              onAnimationComplete={() => setShowCopied(false)}
+              transition={{ duration: 1.5 }}
+              variants={{
+                hidden: { opacity: 0 },
+                visible: { opacity: 1 },
+              }}
             >
-              Copied to clipboard!
-            </span>
+              Copied to clipboard
+            </motion.span>
           )}
         </div>
         {posts.map((postDetail) => {
