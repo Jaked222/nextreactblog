@@ -59,13 +59,13 @@ export default function Post({ className, details }) {
             width: 80%;
             display: flex;
             flex-direction: column;
-            margin: 30px 0;
+            margin: 20px 0;
           }
 
           .post.withCard {
-            background: rgba(255, 255, 255, 0.08);
+            background: #23212a;
             border-radius: 5px;
-            padding: 10px;
+            padding: 20px 40px;
           }
 
           @media only screen and (max-width: 768px) {
