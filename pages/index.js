@@ -9,6 +9,7 @@ import FileCopyIcon from "@material-ui/icons/FileCopy";
 import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import DarkModeToggle from "react-dark-mode-toggle";
+import { colors } from "../site-config";
 
 export default function Home() {
   const [showCopied, setShowCopied] = useState(false);
@@ -18,6 +19,11 @@ export default function Home() {
   const textAreaRef = useRef(null);
 
   useEffect(() => {
+    // This use of useEffect is weird. We're doing this because the file copy icon
+    // would sometimes be huge on the first render, so we are hiding the icon until
+    // the page has already been rendered once. By the time it shows, for whatever reason,
+    // the icon is normal size. The better solution to this would be to figure out the cause
+    // of the above, but this was quicker.
     setShowFileCopyIcon(true);
   }, []);
 
@@ -48,38 +54,66 @@ export default function Home() {
     setShowCopied(true);
   };
 
-  let handleDarkModeToggle = (e) => {
-    if (!isDarkMode) {
-      document.documentElement.style.setProperty("--primary-text", "white");
+  useEffect(() => {
+    setSiteColors(false);
+  }, []);
+
+  let setSiteColors = (isDarkModeTemp) => {
+    if (!isDarkModeTemp) {
       document.documentElement.style.setProperty(
-        "--secondary-text",
-        "hsla(0, 0%, 100%, 0.6)"
+        colors.darkMode.primaryText.varName,
+        colors.darkMode.primaryText.color
       );
+
       document.documentElement.style.setProperty(
-        "--call-to-action",
-        "goldenrod"
+        colors.darkMode.secondaryText.varName,
+        colors.darkMode.secondaryText.color
       );
+
       document.documentElement.style.setProperty(
-        "--container-background",
-        "#141317"
+        colors.darkMode.callToAction.varName,
+        colors.darkMode.callToAction.color
       );
+
       document.documentElement.style.setProperty(
-        "--post-background",
-        "#23212a"
+        colors.darkMode.containerBackground.varName,
+        colors.darkMode.containerBackground.color
+      );
+
+      document.documentElement.style.setProperty(
+        colors.darkMode.postBackground.varName,
+        colors.darkMode.postBackground.color
       );
     } else {
-      document.documentElement.style.setProperty("--primary-text", "#000000");
-      document.documentElement.style.setProperty("--secondary-text", "#6D6A6F");
-      document.documentElement.style.setProperty("--call-to-action", "#7C20D8");
       document.documentElement.style.setProperty(
-        "--container-background",
-        "white"
+        colors.lightMode.primaryText.varName,
+        colors.lightMode.primaryText.color
       );
+
       document.documentElement.style.setProperty(
-        "--post-background",
-        "#F5F5F5"
+        colors.lightMode.secondaryText.varName,
+        colors.lightMode.secondaryText.color
+      );
+
+      document.documentElement.style.setProperty(
+        colors.lightMode.callToAction.varName,
+        colors.lightMode.callToAction.color
+      );
+
+      document.documentElement.style.setProperty(
+        colors.lightMode.containerBackground.varName,
+        colors.lightMode.containerBackground.color
+      );
+
+      document.documentElement.style.setProperty(
+        colors.lightMode.postBackground.varName,
+        colors.lightMode.postBackground.color
       );
     }
+  };
+
+  let handleDarkModeToggle = (e) => {
+    setSiteColors(isDarkMode);
     setIsDarkMode(e);
   };
 
