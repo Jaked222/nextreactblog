@@ -20,7 +20,7 @@ export default function Post({ className, details }) {
         Preview text. lorem ipsum etc etc etc lalala some text here that's going
         to be some...
       </p>
-      <Link href={details.url}>
+      <Link href="/posts/[post]" as={`${details.url}`}>
         <a
           style={{
             color: "var(--call-to-action)",

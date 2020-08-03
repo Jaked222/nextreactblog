@@ -1,5 +1,3 @@
-export const cardEnabled = true;
-
 export const colors = {
   darkMode: {
     primaryText: {
@@ -55,3 +53,4 @@ export const quotes = [
 ];
 
 export const displayQuoteSection = true;
+export const cardEnabled = true;

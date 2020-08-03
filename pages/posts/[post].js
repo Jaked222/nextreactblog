@@ -7,10 +7,6 @@ export default function PostWrapper() {
   const router = useRouter();
   const [MarkDown, setMarkDown] = useState(null);
 
-  let handleGoHomeClick = () => {
-    router.push("/");
-  };
-
   const { post } = router.query;
   useEffect(() => {
     setMarkDown(dynamic(() => import(`../../markdown/${post}.mdx`)));
@@ -19,32 +15,14 @@ export default function PostWrapper() {
   return (
     <div className="container">
       <Head>
-        <title>post title</title>
+        <title>Post Title</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        <h1 className="page-title" onClick={handleGoHomeClick}>
-          jake duncan &middot; developer
-        </h1>
-        <div className="post-body">
-          <h2>Post Title</h2>
-          <div>post subtitle - length</div>
-          {MarkDown && <MarkDown />}
-        </div>
-      </main>
-
-      <footer>
-        <div className="footer-text">
-          <a href="mailto:jakecduncan@gmail.com">jakecduncan@gmail.com</a>
-        </div>
-      </footer>
-      <style jsx>{`
-        .post-body div {
-          color: var(--secondary-text);
-          margin-top: -20px;
-          font-style: italic;
-        }
-      `}</style>
+      <div className="post-body">
+        <h2>Post Title</h2>
+        <div>post subtitle - length</div>
+        {MarkDown && <MarkDown />}
+      </div>
     </div>
   );
 }
