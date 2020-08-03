@@ -13,12 +13,12 @@ export default function PostWrapper() {
   }, [post]);
 
   return (
-    <div className="container">
+    <div>
       <Head>
         <title>Post Title</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="post-body">
+      <div>
         <h2>Post Title</h2>
         <div>post subtitle - length</div>
         {MarkDown && <MarkDown />}
