@@ -20,7 +20,7 @@ export default function MyApp({ Component, pageProps }) {
   };
 
   return (
-    <>
+    <div className="container">
       <main>
         <div className="wrapper-header">
           <h1 onClick={handleGoHomeClick}>Jake Duncan &middot; Developer</h1>
@@ -56,6 +56,6 @@ export default function MyApp({ Component, pageProps }) {
           align-items: center;
         }
       `}</style>
-    </>
+    </div>
   );
 }

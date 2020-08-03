@@ -7,7 +7,6 @@ import { displayQuoteSection } from "../site-config";
 import FileCopyIcon from "@material-ui/icons/FileCopy";
 import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import Wrapper from "../components/wrapper";
 
 export default function Home() {
   const [showCopied, setShowCopied] = useState(false);
@@ -47,7 +46,7 @@ export default function Home() {
   };
 
   return (
-    <div className="container">
+    <>
       <Head>
         <title>jakeduncan.dev</title>
         <link rel="icon" href="/favicon.ico" />
@@ -103,6 +102,6 @@ export default function Home() {
           <Post key={postDetail.title} className="post" details={postDetail} />
         );
       })}
-    </div>
+    </>
   );
 }
