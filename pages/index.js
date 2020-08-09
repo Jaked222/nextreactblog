@@ -62,20 +62,19 @@ export default function Home() {
           {displayQuoteSection && <QuoteSection className="quote-text" />}
         </div>
         <div>
-          <a href="mailto:jakecduncan@gmail.com">
+          <a onClick={handleCopyClick} style={{ cursor: "pointer" }}>
             <span ref={textAreaRef}>jakecduncan@gmail.com</span>
+            {showFileCopyIcon && (
+              <FileCopyIcon
+                style={{
+                  color: "var(--secondary-text)",
+                  fontSize: "1rem",
+                  marginLeft: "8px",
+                }}
+              />
+            )}
           </a>
-          {showFileCopyIcon && (
-            <FileCopyIcon
-              onClick={handleCopyClick}
-              style={{
-                color: "var(--secondary-text)",
-                fontSize: "1rem",
-                marginLeft: "10px",
-                cursor: "pointer",
-              }}
-            />
-          )}
+
           {showCopied && (
             <motion.span
               style={{
