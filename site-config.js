@@ -50,6 +50,8 @@ export const quotes = [
   "When it comes to practice, see nothing that happens as good or bad",
   "Sometimes it's better to travel than to arrive",
   "Technology is the offspring of science. Science is the offspring of rationality.",
+  "Let go of what you cant control, and then you have control.",
+  "When fearful, ask: What am I choosing to not see?",
 ];
 
 export const displayQuoteSection = true;
