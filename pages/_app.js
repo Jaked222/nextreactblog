@@ -24,10 +24,13 @@ export default function MyApp({ Component, pageProps }) {
       <main>
         <div className="wrapper-header">
           <h1 onClick={handleGoHomeClick}>Jake Duncan &middot; Developer</h1>
-          <DarkModeToggle
-            onChange={handleDarkModeToggle}
-            checked={isDarkMode}
-          />
+          <div className="flex">
+            <DarkModeToggle
+              onChange={handleDarkModeToggle}
+              speed={2}
+              checked={isDarkMode}
+            />
+          </div>
         </div>
 
         <Component {...pageProps} />
@@ -54,6 +57,16 @@ export default function MyApp({ Component, pageProps }) {
           display: flex;
           justify-content: space-between;
           align-items: center;
+        }
+
+        .flex {
+          display: flex;
+        }
+
+        @media only screen and (max-width: 768px) {
+          .wrapper-header {
+            width: 100%;
+          }
         }
       `}</style>
     </div>
