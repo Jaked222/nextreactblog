@@ -3,7 +3,7 @@ import Link from "next/link";
 import { cardEnabled } from "../site-config";
 import ArrowRightAltIcon from "@material-ui/icons/ArrowRightAlt";
 
-export default function Post({ className, details }) {
+export default function PostListItem({ className, details }) {
   className = cardEnabled ? className + " withCard" : className;
   return (
     <div className={className}>

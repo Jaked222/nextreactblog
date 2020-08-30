@@ -17,11 +17,9 @@ export default function PostWrapper() {
       <Head>
         <title>Post Title</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <div>
-        <h2>Post Title</h2>
-        {MarkDown && <MarkDown />}
-      </div>
+      <div>{MarkDown && <MarkDown />}</div>
     </div>
   );
 }

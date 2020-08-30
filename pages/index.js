@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Bio from "../components/bio";
-import Post from "../components/post";
+import PostListItem from "../components/postListItem";
 import posts from "../post-config";
 import QuoteSection from "../components/quoteSection";
 import { displayQuoteSection } from "../site-config";
@@ -50,6 +50,7 @@ export default function Home() {
       <Head>
         <title>jakeduncan.dev</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <div className="page-title">
         <div
@@ -98,7 +99,11 @@ export default function Home() {
       </div>
       {posts.map((postDetail) => {
         return (
-          <Post key={postDetail.title} className="post" details={postDetail} />
+          <PostListItem
+            key={postDetail.title}
+            className="post"
+            details={postDetail}
+          />
         );
       })}
     </>
