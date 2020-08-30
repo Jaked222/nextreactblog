@@ -1,9 +1,8 @@
 import Head from "next/head";
-import Bio from "../components/bio";
 import PostListItem from "../components/postListItem";
 import posts from "../post-config";
 import QuoteSection from "../components/quoteSection";
-import { displayQuoteSection } from "../site-config";
+import { displayQuoteSection, email, homePageTitle } from "../site-config";
 import FileCopyIcon from "@material-ui/icons/FileCopy";
 import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
@@ -48,7 +47,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>jakeduncan.dev</title>
+        <title>{homePageTitle}</title>
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
@@ -64,7 +63,7 @@ export default function Home() {
         </div>
         <div>
           <a onClick={handleCopyClick} style={{ cursor: "pointer" }}>
-            <span ref={textAreaRef}>jakecduncan@gmail.com</span>
+            <span ref={textAreaRef}>{email}</span>
             {showFileCopyIcon && (
               <FileCopyIcon
                 style={{

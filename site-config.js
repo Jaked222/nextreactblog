@@ -1,3 +1,15 @@
+export const appHeaderText = "Jake Duncan \u00B7 Developer";
+
+export const homePageTitle = "jakeduncan.dev";
+
+export const email = "jakecduncan@gmail.com";
+
+export const footerEmailLink = "mailto:jakecduncan@gmail.com";
+
+export const footerLinkedinLink = "www.linkedin.com/in/jakeduncan222";
+
+export const footerGithubLink = "https://github.com/Jaked222";
+
 export const colors = {
   darkMode: {
     primaryText: {

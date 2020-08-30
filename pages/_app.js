@@ -3,8 +3,13 @@ import { useState, useEffect } from "react";
 import DarkModeToggle from "react-dark-mode-toggle";
 import { setSiteColors } from "../helperFunctions";
 import { useRouter } from "next/router";
+import {
+  appHeaderText,
+  footerEmailLink,
+  footerLinkedinLink,
+  footerGithubLink,
+} from "../site-config";
 
-// This default export is required in a new `pages/_app.js` file.
 export default function MyApp({ Component, pageProps }) {
   const router = useRouter();
 
@@ -23,7 +28,7 @@ export default function MyApp({ Component, pageProps }) {
     <div className="container">
       <main>
         <div className="wrapper-header">
-          <h1 onClick={handleGoHomeClick}>Jake Duncan &middot; Developer</h1>
+          <h1 onClick={handleGoHomeClick}>{appHeaderText}</h1>
           <div className="flex">
             <DarkModeToggle
               onChange={handleDarkModeToggle}
@@ -38,15 +43,15 @@ export default function MyApp({ Component, pageProps }) {
 
       <footer>
         <div>
-          <a className="footer-link first" href="mailto:jakecduncan@gmail.com">
+          <a className="footer-link first" href={footerEmailLink}>
             Email
           </a>
           &middot;
-          <a className="footer-link" href="www.linkedin.com/in/jakeduncan222">
+          <a className="footer-link" href={footerLinkedinLink}>
             Linkedin
           </a>
           &middot;
-          <a className="footer-link" href="https://github.com/Jaked222">
+          <a className="footer-link" href={footerGithubLink}>
             Github
           </a>
         </div>
