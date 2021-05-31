@@ -17,8 +17,8 @@ export default function PostListItem({ className, details }) {
         {details.datePublished} &middot; {details.readTimeMinutes}m read time
       </div>
       <p>
-        Preview text. lorem ipsum etc etc etc lalala some text here that's going
-        to be some...
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ipsum
+        tortor, dignissim nec lectus vitae, dapibus venenatis mi...
       </p>
       <Link href="/posts/[post]" as={`${details.url}`}>
         <a
