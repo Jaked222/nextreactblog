@@ -7,12 +7,14 @@ export default function PostListItem({ className, details }) {
   className = cardEnabled ? className + " withCard" : className;
   return (
     <div className={className}>
-      <h2>
-        {details.featured && (
-          <StarRateIcon style={{ color: "var(--call-to-action)" }} />
-        )}
-        {details.title}
-      </h2>
+      <Link href="/posts/[post]" as={`${details.url}`}>
+        <h2>
+          {details.featured && (
+            <StarRateIcon style={{ color: "var(--call-to-action)" }} />
+          )}
+          {details.title}
+        </h2>
+      </Link>
       <div className="italic">
         {details.datePublished} &middot; {details.readTimeMinutes}m read time
       </div>
@@ -45,6 +47,7 @@ export default function PostListItem({ className, details }) {
           h2 {
             margin: 10px 0 0 0;
             color: var(--primary-text);
+            cursor: pointer;
           }
 
           div {
